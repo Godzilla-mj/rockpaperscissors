@@ -37,22 +37,27 @@ function playerLose(){
 	++computerScore
 }
 
-playerScore = 0
-computerScore = 0
+function gameEnd(){
+	if (playerScore > computerScore){
+			console.log("You Won! Play Again?")
+	}else{
+			console.log("You Lost! Play Again?")
+	}
+}
+
 
 function game(){
+	playerScore = 0
+	computerScore = 0
 	console.log("Best out of 5 rounds!")
 	while ((playerScore + computerScore) < 5){
 		playRound()
 		console.log("Player Score: " + playerScore + "\n Computer Score " + computerScore)
+		if (playerScore >= 3 || computerScore >= 3){
+			gameEnd()
+			break;
 	}
-	if ((playerScore + computerScore) === 5){
-		if (playerScore > computerScore){
-			console.log("You Won! Play Again?")
-		}else{
-			console.log("You Lost! Play Again?")
-		}
-	}
+}
 }
 
 
