@@ -16,37 +16,32 @@ function playRound(){
 		console.log("Draw!")
 		return
 	} if (player === "ROCK") {
-		if (cpu === "PAPER") {
-			console.log("You Lose! " + cpu + " beats " + player)
-			++computerScore
-		} else {
-			console.log("You Win! " + player + " beats " + cpu)
-			++playerScore
-		}
+		if (cpu === "PAPER") {playerLose()
+		} else {playerWin()}
 	} if (player === "PAPER") {
-		if (cpu === "ROCK"){
-			console.log("You Win! " + player + " beats " + cpu)
-			++playerScore
-		}
-		else {
-			console.log("You Lose! " + cpu + " beats " + player)
-			++computerScore
-		}
+		if (cpu === "ROCK"){playerWin()
+		} else {playerLose()}
 	} if (player === "SCISSORS") {
-		if (cpu === "ROCK"){
-			console.log("You Lose! " + cpu + " beats " + player)
-			++computerScore
-		} else {
-			console.log("You Win! " + player + " beats " + cpu)
-			++playerScore
-		}
+		if (cpu === "ROCK"){playerLose()
+		} else {playerWin()}
 	}
+}
+
+function playerWin(){
+	console.log("You Win! " + player + " beats " + cpu)
+	++playerScore
+}
+
+function playerLose(){
+	console.log("You Lose! " + cpu + " beats " + player)
+	++computerScore
 }
 
 playerScore = 0
 computerScore = 0
 
 function game(){
+	console.log("Best out of 5 rounds!")
 	while ((playerScore + computerScore) < 5){
 		playRound()
 		console.log("Player Score: " + playerScore + "\n Computer Score " + computerScore)
