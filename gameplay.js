@@ -62,7 +62,7 @@ function game(){
 } //best out of 5 round game function
 
 
-
+game()
 
 
 
