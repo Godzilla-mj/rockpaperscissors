@@ -89,6 +89,6 @@ function reset(){
 	computerScore = 0;
 	scoreboard.textContent = ("Player Score: " + playerScore +
 	"\nComputer Score " + computerScore);
-	info.textContent = "Game Reset";
+	info.textContent = "Game Restart!";
 	gameMsg.textContent = "";
 }
